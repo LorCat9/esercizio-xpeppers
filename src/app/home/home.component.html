@@ -1,0 +1,69 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="header">
+          <h4 class="title">Info</h4>
+        </div>
+        <div class="content">
+          Basic sales tax is applicable at a rate of 10% on all goods, except books, food, and medical
+          products that are exempt.
+          Import duty is an additional sales tax applicable on all imported goods at a rate of 5%, with no
+          exemptions.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="card">
+        <div class="header">
+          <h4 class="title">Seleziona Prodotti</h4>
+        </div>
+        <div class="content">
+          <div class="col-md-offset-1">
+            <label class="form-check-label">
+              Seleziona Prodotto:
+              <select [(ngModel)]="indexProductSelected">
+                <option *ngFor="let productD of xpService.catalog.productDescriptions, let i = index" [value]="i">
+                  {{productD}}
+                </option>
+              </select>
+              Quantità:
+              <select [(ngModel)]="quantitySelected">
+                <option *ngFor="let quantity of quantities" [value]="quantity">
+                  {{quantity}}
+                </option>
+              </select>
+            </label>
+            <button (click)="onAggiungiProdotto()">Aggiungi Prodotto</button>
+          </div>
+        </div>
+        <div class="header">
+          <h4 class="title">Prodotti Selezionati</h4>
+        </div>
+        <div class="content">
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let saleLine of xpService.currentSale.saleLines; let i = index">
+              <div class="content">
+                <div class="row">
+                  <div class="col-xs-7">
+                    {{ saleLine.quantity }} {{saleLine.product.toString()}}
+                  </div>
+                  <div class="text-right">
+                    <button class="btn btn-sm btn-icon" (click)="onRimuovi(i)"><i class="fa fa-trash"></i></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="text-center">
+          <button type="submit" (click)="onCalcola()"
+                  class="btn btn-info btn-fill btn-lg"
+                  [disabled]="xpService.isCurrentSaleEmpty()">Calcola Totale e Tasse</button>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>
+
