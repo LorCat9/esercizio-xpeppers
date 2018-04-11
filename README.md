@@ -22,6 +22,7 @@ la tassazione.
 
 Diagrammi Generali:
 ![alt prova](/src/assets/GitHub-img/cd.jpg)
+*TaxCalculator è stato segnato come Singleton per errore, non lo è.
 
 ![alt prova](/src/assets/GitHub-img/cd2.jpg)
 
