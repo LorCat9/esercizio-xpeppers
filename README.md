@@ -7,7 +7,7 @@ Testo: [Esercizio](https://github.com/xpeppers/sales-taxes-problem)
 
 ### Il Programma
 
-Il programma può essere visto coma le base per un calcolatore di tasse più
+Il programma può essere visto come le base per un calcolatore di tasse più
 complesso.
 
 Questo vuol dire che il software è stato scritto tenendo conto che 
@@ -16,7 +16,7 @@ la tassazione.
 
 ####Tecnologie utilizzate: 
 - Angular 
-- Aws (Rds, AWS Lamda, Api Gateway, S3)
+- Aws (Rds, AWS Lambda, Api Gateway, S3)
 
 ### Diagrammi
 
