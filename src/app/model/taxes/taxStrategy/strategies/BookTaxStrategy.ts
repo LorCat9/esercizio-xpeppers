@@ -5,7 +5,7 @@ import {Big} from 'big.js';
  * Created by lorenzo on 08/04/18.
  */
 
-export class BooksTaxStrategy extends AbstractTaxStrategy {
+export class BookTaxStrategy extends AbstractTaxStrategy {
     nationalTaxRate: Big;
     importationTaxRate: Big;
 

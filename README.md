@@ -18,12 +18,15 @@ la tassazione.
 - Angular 
 - Aws (Rds, AWS Lamda, Api Gateway, S3)
 
-### Diagrammi Uml
+### Diagrammi
 
-Diagramma Generale:
+Diagrammi Generali:
+![alt prova](/src/assets/GitHub-img/cd.jpg)
 
+![alt prova](/src/assets/GitHub-img/cd1.jpg)
 
-Applicazione Pattern Strategy + Simple Factory:
+Architettura AWS:
+![alt prova](/src/assets/GitHub-img/aws.jpg)
 
 
 ### Come provarlo in locale
@@ -36,12 +39,6 @@ Applicazione Pattern Strategy + Simple Factory:
 - ng test 
 
 I test eseguiti sono quelli nel file: src/app/services/XpService/xp.service.spec.ts
-
-## Elaborato 
-Pronostici singoli partiti:
-![alt prova](/src/assets/GitHub-img/git1.png)
-Pronostici coalizioni: 
-![alt prova](/src/assets/GitHub-img/git3.png)
 
 ## Authors
 

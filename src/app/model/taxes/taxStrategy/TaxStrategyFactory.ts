@@ -1,8 +1,8 @@
 import {AbstractTaxStrategy} from './AbstractTaxStrategy';
-import {BasicTaxStrategy} from './strategies/basicTaxStrategy';
-import {FoodTaxStrategy} from './strategies/foodTaxStrategy';
-import {MedicalTaxStrategy} from './strategies/medicalTaxStrategy';
-import {BooksTaxStrategy} from './strategies/booksTaxStrategy';
+import {BasicTaxStrategy} from './strategies/BasicTaxStrategy';
+import {FoodTaxStrategy} from './strategies/FoodTaxStrategy';
+import {MedicalTaxStrategy} from './strategies/MedicalTaxStrategy';
+import {BookTaxStrategy} from './strategies/BookTaxStrategy';
 import {environment} from '../../../../environments/environment';
 /**
  * Created by lorenzo on 08/04/18.
@@ -36,7 +36,7 @@ export class TaxStrategyFactory {
             }
 
             case environment.bookCode: {
-                return new BooksTaxStrategy();
+                return new BookTaxStrategy();
             }
 
             default: {
