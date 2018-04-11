@@ -23,7 +23,7 @@ la tassazione.
 Diagrammi Generali:
 ![alt prova](/src/assets/GitHub-img/cd.jpg)
 
-![alt prova](/src/assets/GitHub-img/cd1.jpg)
+![alt prova](/src/assets/GitHub-img/cd2.jpg)
 
 Architettura AWS:
 ![alt prova](/src/assets/GitHub-img/aws.jpg)
