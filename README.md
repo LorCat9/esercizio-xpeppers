@@ -3,12 +3,12 @@
 Testo: [Esercizio](https://github.com/xpeppers/sales-taxes-problem)
 
 ### Elaborato Finale
-[Portale Tax Calculator](link)
+[Portale Tax Calculator](http://esercizioxp.s3-website-eu-west-1.amazonaws.com/home)
 
 ### Il Programma
 
 Il programma può essere visto coma le base per un calcolatore di tasse più
-complesso. 
+complesso.
 
 Questo vuol dire che il software è stato scritto tenendo conto che 
 in futuro ogni categoria di prodotto avrà il proprio algoritmo che ne determinerà
