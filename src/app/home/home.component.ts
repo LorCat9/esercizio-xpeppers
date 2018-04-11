@@ -13,24 +13,34 @@ export class HomeComponent implements OnInit {
 
   indexProductSelected: number;
   quantitySelected: number;
+  inputValid: boolean;
 
-  quantities = [1, 2, 3, 4, 5];
+  quantities = [];
 
   constructor(public xpService: XpService, private router: Router) {
+    for (let i = 1; i < 11; i++) {
+      this.quantities.push(i);
+    }
   }
 
   ngOnInit() {
+    this.inputValid = true;
     const element = document.getElementById('navTop');
     element.scrollIntoView();
     this.xpService.createNewSale();
   }
 
   onAggiungiProdotto() {
-    if (!this.indexProductSelected || !this.quantitySelected) {
-      this.xpService.warningMessage('inserire tutti i campi');
+    if (!this.checkInputData()) {
+      this.inputValid = false;
     } else {
+      this.inputValid = true;
       this.xpService.addProductCurrentSale(this.indexProductSelected, Number(this.quantitySelected));
     }
+  }
+
+  checkInputData() {
+    return this.indexProductSelected && this.quantitySelected;
   }
 
   onCalcola() {

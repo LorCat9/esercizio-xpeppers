@@ -7,17 +7,17 @@ import {SaleLine} from '../domain/sale/saleLine';
  */
 export class TaxCalculator {
 
-    constructor() {}
+  constructor() {}
 
-    calculateProductTaxes(productDescription: Product): Big {
-        const taxStrategy = TaxStrategyFactory.getInstance().getProductTaxStrategy(productDescription.category.code);
-        const tax = taxStrategy.calculateTaxes(productDescription);
-        return tax;
-    }
+  calculateProductTaxes(product: Product): Big {
+    const taxStrategy = TaxStrategyFactory.getInstance().getProductTaxStrategy(product.category.code);
+    const tax = taxStrategy.calculateTaxes(product);
+    return tax;
+  }
 
-    calculateSaleLineTaxes(saleLine: SaleLine): Big {
-        const productTaxes = this.calculateProductTaxes(saleLine.product);
-        return productTaxes.mul(new Big(saleLine.quantity));
-    }
+  calculateSaleLineTaxes(saleLine: SaleLine): Big {
+    const productTaxes = this.calculateProductTaxes(saleLine.product);
+    return productTaxes.mul(new Big(saleLine.quantity));
+  }
 
 }

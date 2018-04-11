@@ -23,7 +23,7 @@
             <label class="form-check-label">
               Seleziona Prodotto:
               <select [(ngModel)]="indexProductSelected">
-                <option *ngFor="let productD of xpService.catalog.productDescriptions, let i = index" [value]="i">
+                <option *ngFor="let productD of xpService.catalog.products, let i = index" [value]="i">
                   {{productD}}
                 </option>
               </select>
@@ -35,6 +35,9 @@
               </select>
             </label>
             <button (click)="onAggiungiProdotto()">Aggiungi Prodotto</button>
+          </div>
+          <div class="alert alert-danger" *ngIf="!inputValid">
+            <span><b> Attenzione - </b>Inserire tutti i campi!</span>
           </div>
         </div>
         <div class="header">

@@ -5,7 +5,7 @@ import {Receipt} from '../../model/domain/receipt/receipt';
 import {ReceiptLine} from '../../model/domain/receipt/receiptLine';
 import {TaxCalculator} from '../../model/taxes/taxCalculator';
 import {RepositoryService} from '../repository-service/repository.service';
-declare var $: any;
+
 @Injectable()
 export class XpService {
 
@@ -40,7 +40,7 @@ export class XpService {
     this.repositoryService.getCatalog(
       (error, catalog) => {
         if (error) {
-          console.log('errore');
+          console.log('errore recupero catalogo');
         } else {
           this._catalog = catalog;
         }
@@ -53,7 +53,7 @@ export class XpService {
   }
 
   addProductCurrentSale(indexProductSelected: number, quantity: number) {
-    this.currentSale.addProduct(this.catalog.productDescriptions[indexProductSelected], quantity);
+    this.currentSale.addProduct(this.catalog.products[indexProductSelected], quantity);
   }
 
   isCurrentSaleEmpty(): boolean {
@@ -64,32 +64,4 @@ export class XpService {
   get catalog(): Catalog {
     return this._catalog;
   }
-
-  // message
-  warningMessage(message) {
-    $.notify({
-      message: message
-    }, {
-      type: 'danger',
-      timer: 2000,
-      placement: {
-        from: 'top',
-        align: 'center'
-      }
-    });
-  }
-
-  successMessage(message) {
-    $.notify({
-      message: message
-    }, {
-      type: 'success',
-      timer: 2000,
-      placement: {
-        from: 'top',
-        align: 'center'
-      }
-    });
-  }
-
 }

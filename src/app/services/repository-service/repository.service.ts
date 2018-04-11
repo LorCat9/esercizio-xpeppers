@@ -30,11 +30,7 @@ export class RepositoryService {
     for (const pd of data.products) {
       const ct = new Category(pd.category.name, pd.category.code);
       const prd = new Product(pd.name, pd.price, pd.imported, ct);
-      catalog.addProductDescription(prd);
-    }
-    for (const ctg of data.categories) {
-      const ct = new Category(ctg.name, ctg.code);
-      catalog.addCategory(ct);
+      catalog.addProduct(prd);
     }
     return catalog;
   }

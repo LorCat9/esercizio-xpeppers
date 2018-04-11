@@ -1,7 +1,6 @@
 import {AbstractTaxStrategy} from '../AbstractTaxStrategy';
 import {environment} from '../../../../../environments/environment';
-import {Product} from '../../../domain/catalog/product';
-import {Big} from "big.js";
+import {Big} from 'big.js';
 /**
  * Created by lorenzo on 08/04/18.
  */

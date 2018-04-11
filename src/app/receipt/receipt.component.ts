@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Receipt} from '../model/domain/receipt/receipt';
 import {XpService} from '../services/XpService/xp.service';
 import {Router} from '@angular/router';
@@ -19,8 +19,8 @@ export class ReceiptComponent implements OnInit {
     this.receipt = this.xpService.createReceiptCurrentSale();
   }
 
-  onNuovaSimulazione(){
-    this.router.navigateByUrl('/dashboard');
+  onNuovaSimulazione() {
+    this.router.navigateByUrl('/home');
   }
 
 }

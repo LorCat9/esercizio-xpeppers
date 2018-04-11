@@ -6,37 +6,34 @@ import {environment} from '../../../../environments/environment';
  */
 export abstract class AbstractTaxStrategy {
 
-    nationalTaxRate: Big;
-    importationTaxRate: Big;
+  nationalTaxRate: Big;
+  importationTaxRate: Big;
 
-    constructor() {
+  constructor() {
+  }
+
+  /* Methods */
+
+  calculateTaxes(product: Product): Big {
+    const price = product.price;
+    const nationalTax = this.round(this.calculateNationalTax(price));
+
+    if (product.isImported()) {
+      const importationTax = this.round(this.calculateImportationTax(price));
+      return nationalTax.add(importationTax);
     }
 
-    /* Methods */
+    return nationalTax;
+  };
 
-    calculateTaxes(product: Product): Big {
-        console.log('Calculate Taxes: ' + product.name);
-        const price = product.price;
-        const nationalTax = this.round(this.calculateNationalTax(price));
+  abstract calculateNationalTax(price: Big): Big;
 
-        if (product.isImported()) {
-            const importationTax = this.round(this.calculateImportationTax(price));
-            console.log('Importation Tax: ' + importationTax);
-            console.log('National Tax: ' + nationalTax);
-            console.log(nationalTax.add(importationTax));
-            return nationalTax.add(importationTax);
-        }
+  abstract calculateImportationTax(price: Big): Big;
 
-        return nationalTax;
-    };
+  // arrotondo
+  private round(value: Big): Big {
+    const roundFact = new Big(environment.roundFacotor);
+    return value.div(roundFact).round(0, 1).mul(roundFact);
+  }
 
-    abstract calculateNationalTax(price: Big): Big;
-
-    abstract calculateImportationTax(price: Big): Big;
-
-    // arrotondo al piè
-    private round(value: Big): Big {
-        const roundFact = new Big(environment.roundFacotor);
-        return value.div(roundFact).round(0, 1).mul(roundFact);
-    }
 }

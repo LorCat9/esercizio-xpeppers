@@ -24,9 +24,9 @@ export class TaxStrategyFactory {
     private constructor() {
     }
 
-    getProductTaxStrategy(productTypeCode: string): AbstractTaxStrategy {
+    getProductTaxStrategy(categoryCode: string): AbstractTaxStrategy {
 
-        switch (productTypeCode) {
+        switch (categoryCode) {
             case environment.foodCode: {
                 return new FoodTaxStrategy();
             }
