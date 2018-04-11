@@ -24,7 +24,7 @@ export abstract class AbstractTaxStrategy {
     }
 
     return nationalTax;
-  };
+  }
 
   abstract calculateNationalTax(price: Big): Big;
 
