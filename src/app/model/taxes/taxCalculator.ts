@@ -1,5 +1,5 @@
 import {Product} from '../domain/catalog/product';
-import {TaxStrategyFactory} from './taxStrategy/taxStrategyFactory';
+import {TaxStrategyFactory} from './taxStrategy/TaxStrategyFactory';
 import {Big} from 'big.js';
 import {SaleLine} from '../domain/sale/saleLine';
 /**
@@ -7,10 +7,14 @@ import {SaleLine} from '../domain/sale/saleLine';
  */
 export class TaxCalculator {
 
-  constructor() {}
+  private taxStrategyFactory: TaxStrategyFactory;
+
+  constructor() {
+    this.taxStrategyFactory = TaxStrategyFactory.getInstance();
+  }
 
   calculateProductTaxes(product: Product): Big {
-    const taxStrategy = TaxStrategyFactory.getInstance().getProductTaxStrategy(product.category.code);
+    const taxStrategy = this.taxStrategyFactory.getProductTaxStrategy(product.category.code);
     const tax = taxStrategy.calculateTaxes(product);
     return tax;
   }
